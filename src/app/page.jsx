@@ -1,10 +1,10 @@
-import Background from "@/components/background";
+import Example from "@/components/phone"
 
 export default function Home() {
     
     return (
         <>
-            <Background></Background>
+            <Example></Example>
         </>
     )
 }
