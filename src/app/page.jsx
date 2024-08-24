@@ -6,7 +6,7 @@ export default function Home() {
     
     return (
         <>
-            <MenuBtn></MenuBtn>
+            <Background></Background>
         </>
     )
 }
