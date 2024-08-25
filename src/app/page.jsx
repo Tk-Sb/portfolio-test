@@ -6,7 +6,17 @@ export default function Home() {
     
     return (
         <>
-            <MenuBtn></MenuBtn>
+           <div class="snap-y snap-mandatory overflow-y-scroll h-screen overflow-x-hidden">
+                <section class="snap-start h-screen">
+                    <Background></Background>
+                    
+                </section>
+                <section class="snap-start h-screen">
+                    <Background></Background>
+
+                </section>
+                <section class="snap-start h-screen">Section 3</section>
+            </div>
         </>
     )
 }
