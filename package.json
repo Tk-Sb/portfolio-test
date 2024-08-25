@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@rive-app/canvas": "^2.20.0",
     "framer-motion": "^11.3.29",
     "motion": "^10.18.0",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.3.0"
   },
   "devDependencies": {
     "eslint": "^8",

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 
-export default function Example () {
+export default function PhoneAnimation () {
     return (
         <section className="flex bg-transparent w-fit h-fit m-5">
             <FloatingPhone />
