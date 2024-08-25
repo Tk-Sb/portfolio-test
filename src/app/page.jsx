@@ -1,23 +1,20 @@
 import Background from "@/components/background"
 import MenuBtn from "@/components/menu-btn"
 import Example from "@/components/phone"
+import Home from "@/components/home"
 
-export default function Home() {
+export default function App() {
     
     return (
         <>
-           <div class="snap-y snap-mandatory overflow-y-scroll h-screen overflow-x-hidden">
-                <section class="snap-start h-screen">
-                    <Background></Background>
+           <div lang="ar" dir="rtl" className="overflow-y-scroll overflow-x-hidden h-screen md:snap-none md:overflow-auto">
+                <section className="h-screen flex">
+                    
+                    <Home/>
+                    
                     
                 </section>
-                <section class="snap-start h-screen">
-                    <Background></Background>
-
-                </section>
-                <section class="snap-start h-screen">Section 3</section>
             </div>
-            <Background></Background>
         </>
     )
 }

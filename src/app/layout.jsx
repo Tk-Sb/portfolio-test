@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import Background from "@/components/background";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,8 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#FBFBFB] `}>
+      <body className={`${inter.className} bg-[#FBFBFB] overflow-hidden`}>
         <Navbar/>
+        <Background/>
         {children}
       </body>
     </html>
