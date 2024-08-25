@@ -17,6 +17,7 @@ export default function Home() {
                 </section>
                 <section class="snap-start h-screen">Section 3</section>
             </div>
+            <Background></Background>
         </>
     )
 }
