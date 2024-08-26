@@ -6,7 +6,7 @@ export default function Home() {
     <div lang="ar" dir="rtl" className="pl-[25px] pr-[25px] md:pt-[100px]">
         <div className="min-w-[310px] min-h-[132px] ">
           <div className="flex flex-col gap-[10px]">
-            <p className="text-[36px] font-bold leading-[44px]  md:text-[96px] md:font-bold md:leading-[116px]">
+            <p className="text-[36px] font-bold leading-[44px] md:text-[96px] md:font-bold md:leading-[116px]">
               انقل اسمك 
                 <br/>
                   إلى 

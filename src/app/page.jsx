@@ -9,10 +9,7 @@ export default function App() {
         <>
             <div lang="ar" dir="rtl" className="overflow-y-scroll overflow-x-hidden h-screen md:snap-none md:overflow-auto">
                 <section className="h-screen flex">
-                    
                     <Home/>
-                    
-                    
                 </section>
             </div>
         </>

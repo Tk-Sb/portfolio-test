@@ -5,7 +5,10 @@ import { MotionConfig, motion } from "framer-motion";
 
 export default function MenuBtn () {
     return (
-        <div className="grid h-screen place-content-center bg-gradient-to-br from-violet-500 to-indigo-500">
+        <div className="flex justify-between items-center h-[100px] w-[100vw] bg-transparent px-[25px]">
+            <div className="text-[#F9CE69] text-[48px] font-bold">
+                TP
+            </div>
             <AnimatedHamburgerButton />
         </div>
     )
@@ -24,21 +27,21 @@ function AnimatedHamburgerButton () {
                 initial={false}
                 animate={active ? "open" : "closed"}
                 onClick={() => setActive((pv) => !pv)}
-                className="relative h-20 w-20 rounded-full bg-white/0 transition-colors hover:bg-white/20"
+                className="relative h-20 w-20 rounded-full bg-white/0 transition-colors hover:bg-[#8B5CF6] hover:bg-opacity-50"
             >
                 <motion.span
                     variants={VARIANTS.top}
-                    className="absolute h-1 w-10 bg-white"
+                    className="absolute h-1 w-10 bg-black"
                     style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
                 />
                 <motion.span
                     variants={VARIANTS.middle}
-                    className="absolute h-1 w-10 bg-white"
+                    className="absolute h-1 w-10 bg-black"
                     style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
                 />
                 <motion.span
                     variants={VARIANTS.bottom}
-                    className="absolute h-1 w-5 bg-white"
+                    className="absolute h-1 w-5 bg-black"
                     style={{
                     x: "-50%",
                     y: "50%",
