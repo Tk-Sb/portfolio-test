@@ -5,12 +5,7 @@ import { MotionConfig, motion } from "framer-motion";
 
 export default function MenuBtn () {
     return (
-        <div className="flex justify-between items-center h-[100px] w-[100vw] bg-transparent px-[25px]">
-            <div className="text-[#F9CE69] text-[48px] font-bold">
-                TP
-            </div>
-            <AnimatedHamburgerButton />
-        </div>
+                <AnimatedHamburgerButton />
     )
 }
 
