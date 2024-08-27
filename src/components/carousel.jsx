@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 
-const imgs = [
+const images = [
   "/carousel-cards/Rectangle.jpg",
   "/carousel-cards/Rectangle.jpg",
   "/carousel-cards/Rectangle.jpg",
@@ -32,7 +32,7 @@ export const SwipeCarousel = () => {
 
       if (x === 0) {
         setImgIndex((pv) => {
-          if (pv === imgs.length - 1) {
+          if (pv === images.length - 1) {
             return 0;
           }
           return pv + 1;
@@ -46,7 +46,7 @@ export const SwipeCarousel = () => {
   const onDragEnd = () => {
     const x = dragX.get();
 
-    if (x <= -DRAG_BUFFER && imgIndex < imgs.length - 1) {
+    if (x <= -DRAG_BUFFER && imgIndex < images.length - 1) {
       setImgIndex((pv) => pv + 1);
     } else if (x >= DRAG_BUFFER && imgIndex > 0) {
       setImgIndex((pv) => pv - 1);
@@ -54,7 +54,7 @@ export const SwipeCarousel = () => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-neutral-950 py-8">
+    <div className="flex flex-col items-center overflow-hidden bg-transparent py-8">
       <motion.div
         drag="x"
         dragConstraints={{
@@ -69,13 +69,12 @@ export const SwipeCarousel = () => {
         }}
         transition={SPRING_OPTIONS}
         onDragEnd={onDragEnd}
-        className="flex cursor-grab items-center active:cursor-grabbing"
+        className="flex w-[90vw] cursor-grab items-center active:cursor-grabbing bg-transparent"
       >
         <Images imgIndex={imgIndex} />
       </motion.div>
 
       <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
-      <GradientEdges />
     </div>
   );
 };
@@ -83,7 +82,7 @@ export const SwipeCarousel = () => {
 const Images = ({ imgIndex }) => {
   return (
     <>
-      {imgs.map((imgSrc, idx) => {
+      {images.map((imgSrc, idx) => {
         return (
           <motion.div
             key={idx}
@@ -96,7 +95,7 @@ const Images = ({ imgIndex }) => {
               scale: imgIndex === idx ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className="aspect-video w-screen shrink-0 rounded-xl bg-neutral-800 object-cover"
+            className="aspect-square w-[90vw] shrink-0 rounded-2xl object-cover"
           />
         );
       })}
@@ -107,26 +106,17 @@ const Images = ({ imgIndex }) => {
 const Dots = ({ imgIndex, setImgIndex }) => {
   return (
     <div className="mt-4 flex w-full justify-center gap-2">
-      {imgs.map((_, idx) => {
+      {images.map((_, idx) => {
         return (
           <button
             key={idx}
             onClick={() => setImgIndex(idx)}
             className={`h-3 w-3 rounded-full transition-colors ${
-              idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
+              idx === imgIndex ? "bg-[#F9CE69]" : "bg-[#D2DCE5]"
             }`}
           />
         );
       })}
     </div>
-  );
-};
-
-const GradientEdges = () => {
-  return (
-    <>
-      <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-r from-neutral-950/50 to-neutral-950/0" />
-      <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-l from-neutral-950/50 to-neutral-950/0" />
-    </>
   );
 };
